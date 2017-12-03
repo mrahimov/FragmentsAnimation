@@ -32,11 +32,17 @@ public class NextFragment extends Fragment {
 
         Bundle bundle = getArguments();
         String userInput = bundle.getString("editText");
+
         textView.setText(userInput);
 
-
+        nextInput(userInput);
 
         return rootView;
     }
+    public void nextInput(String string){
+        CheckingInput checkingInput = new CheckingInput(string);
+        textView.setText(checkingInput.getEditTextString());
+    }
+
 
 }
